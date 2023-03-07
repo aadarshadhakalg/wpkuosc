@@ -47,6 +47,53 @@ function kuosc_menus(){
 
 add_action('init','kuosc_menus');
 
+// Custom Post Types
+
+function kuosc_community_type(){
+	$args = array(
+		'labels'=> array(
+			'name' => 'Communities',
+			'singular_name' => 'Community',
+		),
+		'hierarchical' => true,
+		'public' => true,
+		'has_archive'=> true,
+		'menu_icon' => 'dashicons-admin-site-alt3',
+		'supports' => array('title','editor','thumbnail','custom-fields',),
+		'rewrite' => array('slug'=> 'communities'),
+	);	
+
+	register_post_type('communities',$args);
+
+}
+
+
+add_action('init', 'kuosc_community_type');
+
+function kuosc_event_type(){
+	$args = array(
+		'labels'=> array(
+			'name' => 'Events',
+			'singular_name' => 'Event',
+		),
+		'hierarchical' => true,
+		'public' => true,
+		'has_archive'=> true,
+		'menu_icon' => 'dashicons-tickets-alt',
+		'supports' => array('title','editor','thumbnail','custom-fields','comments'),
+		'rewrite' => array('slug'=> 'events'),
+	);	
+
+	register_post_type('events',$args);
+
+}
+
+
+add_action('init', 'kuosc_event_type');
+
+
+
+
 
 // Enqueue all static files
 
