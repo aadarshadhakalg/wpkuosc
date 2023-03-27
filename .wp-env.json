@@ -1,0 +1,14 @@
+{
+    "plugins": [
+        "https://downloads.wordpress.org/plugin/advanced-custom-fields.6.0.7.zip"
+    ],
+ "themes": [
+        "."
+    ],
+
+    "port": 8888,
+    "testsPort": 8889,
+    "config": {
+        "WP_DEBUG_DISPLAY": true
+    }
+}
